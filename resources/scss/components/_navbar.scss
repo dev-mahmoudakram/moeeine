@@ -78,7 +78,10 @@
     }
 }
 
-// ─── Navbar offset for fixed positioning ───────────────────────────────────no
+// ─── Navbar offset for fixed positioning ───────────────────────────────────
+.site-body {
+    padding-top: 72px;
+}
 
 // ─── Language switcher ─────────────────────────────────────────────────────
 .site-lang-switcher {

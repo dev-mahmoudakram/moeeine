@@ -6,7 +6,7 @@
     <title>Admin — معين</title>
     @vite(['resources/scss/app.scss'])
 </head>
-<body class="site-body admin-login-body">
+<body class="site-body admin-login-body admin-page">
     <div class="admin-login">
         <div class="admin-login__card">
             <div class="admin-login__brand">

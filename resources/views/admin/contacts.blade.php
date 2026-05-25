@@ -6,7 +6,7 @@
     <title>الطلبات — Admin معين</title>
     @vite(['resources/scss/app.scss'])
 </head>
-<body class="site-body">
+<body class="site-body admin-page">
 <div class="admin-panel">
 
     {{-- Sidebar --}}
