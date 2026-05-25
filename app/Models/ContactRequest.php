@@ -14,6 +14,7 @@ class ContactRequest extends Model
         'expected_date',
         'notes',
         'locale',
+        'status',
     ];
 
     protected $casts = [

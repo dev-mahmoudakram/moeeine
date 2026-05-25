@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,18 @@ Route::get('/sitemap.xml', function () {
     $xml .= '</urlset>';
 
     return response($xml, 200)->header('Content-Type', 'application/xml');
+});
+
+// ─── Admin ───────────────────────────────────────────────────────────────────
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/login',  [AdminController::class, 'login'])->name('login');
+    Route::post('/login', [AdminController::class, 'authenticate'])->name('authenticate');
+
+    Route::middleware('adminAuth')->group(function () {
+        Route::get('/contacts',                        [AdminController::class, 'contacts'])->name('contacts');
+        Route::post('/contacts/{contact}/status',      [AdminController::class, 'updateStatus'])->name('contacts.status');
+        Route::post('/logout',                         [AdminController::class, 'logout'])->name('logout');
+    });
 });
 
 Route::prefix('{locale}')

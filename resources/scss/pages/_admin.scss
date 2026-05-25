@@ -1,0 +1,320 @@
+// ─── Admin login ───────────────────────────────────────────────────────────
+.admin-login-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    background: $color-darkest;
+}
+
+.admin-login {
+    width: 100%;
+    max-width: 400px;
+    padding: 1.5rem;
+
+    &__card {
+        @include glass-card;
+        padding: 2.5rem 2rem;
+    }
+
+    &__brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    &__logo { height: 48px; width: auto; }
+
+    &__title {
+        font-size: $font-size-lg;
+        font-weight: 700;
+        color: $color-gold;
+        letter-spacing: 0.04em;
+    }
+}
+
+// ─── Admin panel layout ────────────────────────────────────────────────────
+.admin-panel {
+    display: flex;
+    height: 100svh;
+    overflow: hidden;
+    background: $color-darkest;
+}
+
+// ─── Sidebar ───────────────────────────────────────────────────────────────
+.admin-sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    height: 100%;
+    overflow: hidden;
+    background: $color-deep-teal;
+    border-inline-end: 1px solid $color-card-border;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+
+    &__brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0 1.25rem 1.5rem;
+        border-bottom: 1px solid $color-card-border;
+        margin-bottom: 1rem;
+        font-size: $font-size-sm;
+        font-weight: 700;
+        color: $color-gold;
+    }
+
+    &__logo { height: 32px; width: auto; }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0 0.75rem;
+        flex: 1;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.625rem 0.75rem;
+        border-radius: $radius-md;
+        font-size: $font-size-sm;
+        color: rgba($color-ivory, 0.65);
+        transition: background $transition-base, color $transition-base;
+
+        &:hover { background: rgba($color-gold, 0.08); color: $color-ivory; }
+        &.active { background: rgba($color-gold, 0.12); color: $color-gold; font-weight: 600; }
+    }
+
+    &__badge {
+        font-size: 0.7rem;
+        background: rgba($color-ivory, 0.10);
+        color: $color-ivory;
+        border-radius: $radius-pill;
+        padding: 0.1rem 0.5rem;
+        font-weight: 700;
+
+        &--new { background: rgba($color-gold, 0.20); color: $color-gold; }
+    }
+
+    &__logout {
+        padding: 1rem 1.25rem 0;
+        border-top: 1px solid $color-card-border;
+        margin-top: auto;
+    }
+
+    &__logout-btn {
+        width: 100%;
+        background: none;
+        border: 1px solid rgba($color-card-border, 0.6);
+        color: rgba($color-ivory, 0.45);
+        border-radius: $radius-md;
+        padding: 0.5rem;
+        font-size: $font-size-sm;
+        cursor: pointer;
+        transition: border-color $transition-base, color $transition-base;
+
+        &:hover { border-color: rgba(#e57373, 0.5); color: #e57373; }
+    }
+}
+
+// ─── Main area ─────────────────────────────────────────────────────────────
+.admin-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    // Firefox
+    scrollbar-width: thin;
+    scrollbar-color: rgba($color-gold, 0.40) transparent;
+
+    // Chrome / Edge / Brave
+    &::-webkit-scrollbar         { width: 5px; }
+    &::-webkit-scrollbar-track   { background: transparent; }
+    &::-webkit-scrollbar-thumb   {
+        background: rgba($color-gold, 0.35);
+        border-radius: $radius-pill;
+        &:hover { background: rgba($color-gold, 0.65); }
+    }
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    &__title {
+        font-size: $font-size-2xl;
+        font-weight: 700;
+        color: $color-ivory;
+        margin: 0;
+    }
+
+    &__count {
+        font-size: $font-size-sm;
+        color: rgba($color-ivory, 0.45);
+        background: rgba($color-ivory, 0.06);
+        border-radius: $radius-pill;
+        padding: 0.2rem 0.75rem;
+    }
+}
+
+.admin-empty {
+    text-align: center;
+    padding: 4rem;
+    color: rgba($color-ivory, 0.35);
+    font-size: $font-size-lg;
+}
+
+// ─── Table ─────────────────────────────────────────────────────────────────
+.admin-table-wrap {
+    overflow-x: auto;
+    border-radius: $radius-lg;
+    border: 1px solid $color-card-border;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $font-size-sm;
+
+    thead tr {
+        background: $color-deep-teal;
+        border-bottom: 1px solid $color-card-border;
+    }
+
+    th {
+        padding: 0.875rem 1rem;
+        text-align: start;
+        font-weight: 700;
+        color: $color-gold;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 0.875rem 1rem;
+        color: rgba($color-ivory, 0.80);
+        border-bottom: 1px solid rgba($color-card-border, 0.4);
+        vertical-align: middle;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+
+    tbody tr { background: rgba($color-deep-teal, 0.4); transition: background $transition-base; }
+    tbody tr:hover { background: rgba($color-deep-teal, 0.8); }
+
+    &__row--new td:first-child { border-inline-start: 3px solid $color-gold; }
+    &__row--done { opacity: 0.6; }
+
+    &__name  { font-weight: 600; color: $color-ivory; }
+    &__phone { font-family: $font-latin; font-size: 0.8rem; }
+    &__notes { max-width: 200px; color: rgba($color-ivory, 0.55); }
+    &__date  { white-space: nowrap; color: rgba($color-ivory, 0.45); font-size: 0.75rem; }
+}
+
+.admin-status-select {
+    background: $color-card-bg;
+    border: 1px solid rgba($color-card-border, 0.8);
+    border-radius: $radius-md;
+    color: $color-ivory;
+    padding: 0.3rem 0.625rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+
+    option { background: $color-deep-teal; }
+
+    &:focus { outline: none; border-color: rgba($color-gold, 0.6); }
+}
+
+.admin-pagination {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+
+    .pagination {
+        gap: 0.25rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .page-link {
+        background: $color-card-bg;
+        border: 1px solid rgba($color-card-border, 0.6);
+        color: rgba($color-ivory, 0.65);
+        border-radius: $radius-md !important;
+        padding: 0.4rem 0.75rem;
+        font-size: $font-size-sm;
+
+        &:hover { background: rgba($color-gold, 0.10); color: $color-gold; border-color: rgba($color-gold, 0.3); }
+    }
+
+    .active .page-link { background: $color-gold; border-color: $color-gold; color: $color-darkest; font-weight: 700; }
+    .disabled .page-link { opacity: 0.35; }
+}
+
+// ─── Error pages ──────────────────────────────────────────────────────────
+.error-page {
+    @include section-base($bg: $color-darkest);
+    min-height: calc(100svh - 140px);
+    display: flex;
+    align-items: center;
+
+    &__code {
+        font-size: clamp(6rem, 20vw, 12rem);
+        font-weight: 900;
+        line-height: 1;
+        @include gradient-text;
+        margin-bottom: 1rem;
+        opacity: 0.6;
+    }
+
+    &__title {
+        font-size: $font-size-2xl;
+        font-weight: 700;
+        color: $color-ivory;
+        margin-bottom: 1rem;
+    }
+
+    &__body {
+        font-size: $font-size-lg;
+        color: rgba($color-ivory, 0.55);
+        max-width: 480px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.7;
+    }
+}
+
+// ─── Floating WhatsApp FAB ─────────────────────────────────────────────────
+.whatsapp-fab {
+    position: fixed;
+    bottom: 1.75rem;
+    inset-inline-end: 1.75rem;
+    z-index: 200;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(#25D366, 0.45), 0 2px 8px rgba(0,0,0,0.25);
+    transition: transform $transition-base, box-shadow $transition-base;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 28px rgba(#25D366, 0.60), 0 2px 8px rgba(0,0,0,0.25);
+        color: #fff;
+    }
+}
