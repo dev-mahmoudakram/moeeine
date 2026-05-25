@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <div class="admin-login">
         <div class="admin-login__card">
             <div class="admin-login__brand">
-                <img src="{{ Vite::asset('resources/assets/logo.png') }}" alt="معين" class="admin-login__logo">
+                <img src="{{ Vite::asset('resources/assets/logo.webp') }}" alt="معين" class="admin-login__logo">
                 <span class="admin-login__title">لوحة الإدارة</span>
             </div>
 

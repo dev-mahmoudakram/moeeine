@@ -1,9 +1,9 @@
-<nav class="site-navbar navbar navbar-expand-lg" id="siteNavbar">
+﻿<nav class="site-navbar navbar navbar-expand-lg" id="siteNavbar">
     <div class="container">
 
         {{-- Brand --}}
         <a class="navbar-brand site-navbar__brand" href="{{ route('home', ['locale' => app()->getLocale()]) }}">
-            <img src="{{ Vite::asset('resources/assets/logo.png') }}" alt="{{ __('site.footer.company') }}" class="site-navbar__logo">
+            <img src="{{ Vite::asset('resources/assets/logo.webp') }}" alt="{{ __('site.footer.company') }}" class="site-navbar__logo" fetchpriority="high" decoding="async">
         </a>
 
         {{-- Mobile toggle --}}

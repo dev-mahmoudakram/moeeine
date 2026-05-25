@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="UTF-8">
@@ -16,14 +16,14 @@
     <meta property="og:url"         content="{{ url()->current() }}">
     <meta property="og:title"       content="@yield('og_title', __('site.meta.og_title'))">
     <meta property="og:description" content="@yield('og_description', __('site.meta.og_description'))">
-    <meta property="og:image"       content="{{ Vite::asset('resources/assets/logo.png') }}">
+    <meta property="og:image"       content="{{ Vite::asset('resources/assets/logo.webp') }}">
     <meta property="og:locale"      content="{{ app()->getLocale() === 'ar' ? 'ar_SA' : 'en_US' }}">
 
     {{-- Twitter Card --}}
     <meta name="twitter:card"        content="summary">
     <meta name="twitter:title"       content="@yield('og_title', __('site.meta.og_title'))">
     <meta name="twitter:description" content="@yield('og_description', __('site.meta.og_description'))">
-    <meta name="twitter:image"       content="{{ Vite::asset('resources/assets/logo.png') }}">
+    <meta name="twitter:image"       content="{{ Vite::asset('resources/assets/logo.webp') }}">
 
     {{-- hreflang --}}
     @php
@@ -42,7 +42,7 @@
         "name": "{{ __('site.footer.company') }}",
         "description": "{{ __('site.meta.description') }}",
         "url": "{{ config('app.url') }}",
-        "logo": "{{ Vite::asset('resources/assets/logo.png') }}",
+        "logo": "{{ Vite::asset('resources/assets/logo.webp') }}",
         "areaServed": ["Makkah", "Madinah", "Jeddah"],
         "serviceType": "Mobility & Transportation",
         "contactPoint": {
@@ -60,6 +60,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="{{ __('site.footer.company') }}">
     <link rel="manifest" href="/site.webmanifest">
+
+    {{-- Preload critical fonts --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 

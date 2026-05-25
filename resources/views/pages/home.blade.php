@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', __('site.meta.title'))
 @section('description', __('site.meta.description'))
@@ -36,9 +36,11 @@
             </div>
             <div class="col-lg-6">
                 <div class="hero__visual" data-reveal data-reveal-delay="2">
-                    <img src="{{ Vite::asset('resources/assets/hero.jpeg') }}"
+                    <img src="{{ Vite::asset('resources/assets/hero.webp') }}"
                          alt="{{ __('site.hero.image_alt') }}"
-                         class="hero__image">
+                         class="hero__image"
+                         fetchpriority="high"
+                         decoding="async">
                 </div>
             </div>
         </div>
@@ -130,9 +132,11 @@
         <div class="row align-items-center gy-5">
             <div class="col-lg-6">
                 <div class="cart-section__visual" data-reveal>
-                    <img src="{{ Vite::asset('resources/assets/e-car.jpeg') }}"
+                    <img src="{{ Vite::asset('resources/assets/e-car.webp') }}"
                          alt="{{ __('site.cart.image_alt') }}"
-                         class="cart-section__image">
+                         class="cart-section__image"
+                         loading="lazy"
+                         decoding="async">
                 </div>
             </div>
             <div class="col-lg-6" data-reveal data-reveal-delay="1">
@@ -230,16 +234,19 @@
             <div class="col-lg-7">
                 <div class="app-section__phones" data-reveal data-reveal-delay="1">
                     <div class="app-section__phone-frame phone-float">
-                        <img src="{{ Vite::asset('resources/assets/mobile-screens/1.jpeg') }}"
-                             alt="{{ __('site.app_preview.screen_alt', ['n' => 1]) }}">
+                        <img src="{{ Vite::asset('resources/assets/mobile-screens/1.webp') }}"
+                             alt="{{ __('site.app_preview.screen_alt', ['n' => 1]) }}"
+                             loading="lazy" decoding="async">
                     </div>
                     <div class="app-section__phone-frame app-section__phone-frame--center phone-float" style="animation-delay:.8s">
-                        <img src="{{ Vite::asset('resources/assets/mobile-screens/2.jpeg') }}"
-                             alt="{{ __('site.app_preview.screen_alt', ['n' => 2]) }}">
+                        <img src="{{ Vite::asset('resources/assets/mobile-screens/2.webp') }}"
+                             alt="{{ __('site.app_preview.screen_alt', ['n' => 2]) }}"
+                             loading="lazy" decoding="async">
                     </div>
                     <div class="app-section__phone-frame phone-float" style="animation-delay:1.6s">
-                        <img src="{{ Vite::asset('resources/assets/mobile-screens/3.jpeg') }}"
-                             alt="{{ __('site.app_preview.screen_alt', ['n' => 3]) }}">
+                        <img src="{{ Vite::asset('resources/assets/mobile-screens/3.webp') }}"
+                             alt="{{ __('site.app_preview.screen_alt', ['n' => 3]) }}"
+                             loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>

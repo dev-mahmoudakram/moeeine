@@ -1,4 +1,4 @@
-<footer class="site-footer">
+﻿<footer class="site-footer">
 
     {{-- Top accent divider --}}
     <div class="site-footer__divider" aria-hidden="true">
@@ -10,9 +10,10 @@
         {{-- Brand panel --}}
         <div class="site-footer__brand text-center" data-reveal>
             <a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="site-footer__brand-link">
-                <img src="{{ Vite::asset('resources/assets/logo.png') }}"
+                <img src="{{ Vite::asset('resources/assets/logo.webp') }}"
                      alt="{{ __('site.footer.company') }}"
-                     class="site-footer__logo mx-auto">
+                     class="site-footer__logo mx-auto"
+                     loading="lazy" decoding="async">
             </a>
             <p class="site-footer__tagline">{{ __('site.footer.tagline') }}</p>
         </div>

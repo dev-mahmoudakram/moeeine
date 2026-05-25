@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 @section('title',          __('site.meta.pages.cart.title'))
 @section('description',    __('site.meta.pages.cart.description'))
 @section('og_title',       __('site.meta.pages.cart.og_title'))
@@ -21,9 +21,11 @@
         <div class="row align-items-center gy-5">
             <div class="col-lg-6" data-reveal>
                 <div class="cart-section__visual">
-                    <img src="{{ Vite::asset('resources/assets/e-car.jpeg') }}"
+                    <img src="{{ Vite::asset('resources/assets/e-car.webp') }}"
                          alt="{{ __('site.cart.image_alt') }}"
-                         class="cart-section__image">
+                         class="cart-section__image"
+                         loading="lazy"
+                         decoding="async">
                 </div>
             </div>
             <div class="col-lg-6" data-reveal data-reveal-delay="1">

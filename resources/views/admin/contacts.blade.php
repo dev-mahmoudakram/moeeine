@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     {{-- Sidebar --}}
     <aside class="admin-sidebar">
         <div class="admin-sidebar__brand">
-            <img src="{{ Vite::asset('resources/assets/logo.png') }}" alt="معين" class="admin-sidebar__logo">
+            <img src="{{ Vite::asset('resources/assets/logo.webp') }}" alt="معين" class="admin-sidebar__logo">
             <span>لوحة الإدارة</span>
         </div>
         <nav class="admin-sidebar__nav">
