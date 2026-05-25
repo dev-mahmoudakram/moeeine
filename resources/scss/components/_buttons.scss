@@ -70,7 +70,7 @@
     align-items: center;
     gap: 0.5rem;
     transition: background $transition-base, transform $transition-fast;
-    width: max-content;
+    width: max-content !important;
 
     &:hover {
         background: darken(#25D366, 8%);

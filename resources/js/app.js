@@ -7,6 +7,10 @@ import intlTelInput from 'intl-tel-input/intlTelInputWithUtils';
 // ─── nice-select2 ─────────────────────────────────────────────────────────
 import NiceSelect from 'nice-select2';
 
+// ─── flatpickr ────────────────────────────────────────────────────────────
+import flatpickr from 'flatpickr';
+import { Arabic } from 'flatpickr/dist/l10n/ar.js';
+
 // ─── Scroll-aware navbar ────────────────────────────────────────────────────
 const navbar = document.getElementById('siteNavbar');
 if (navbar) {
@@ -105,5 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // nice-select2 — all contact selects
     document.querySelectorAll('.contact-select').forEach((el) => {
         NiceSelect.bind(el, { searchable: false });
+    });
+
+    // flatpickr — date picker
+    const isRtl = document.documentElement.dir === 'rtl';
+    document.querySelectorAll('.date-picker').forEach((el) => {
+        flatpickr(el, {
+            dateFormat: 'Y-m-d',
+            minDate: 'today',
+            disableMobile: true,
+            locale: isRtl ? Arabic : 'default',
+        });
     });
 });

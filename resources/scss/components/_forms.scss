@@ -283,3 +283,97 @@
         text-align: right !important;
     }
 }
+
+// ─── flatpickr overrides ───────────────────────────────────────────────────
+.flatpickr-calendar {
+    background: $color-deep-teal !important;
+    border: 1px solid $color-card-border !important;
+    border-radius: $radius-md !important;
+    box-shadow: $shadow-card !important;
+    color: $color-ivory !important;
+
+    // Header bar
+    .flatpickr-months {
+        background: transparent;
+        padding: 0.5rem 0;
+
+        .flatpickr-month { color: $color-ivory !important; }
+
+        .flatpickr-prev-month,
+        .flatpickr-next-month {
+            color: rgba($color-ivory, 0.60) !important;
+            fill: rgba($color-ivory, 0.60) !important;
+            &:hover { color: $color-gold !important; fill: $color-gold !important; }
+        }
+    }
+
+    .flatpickr-current-month {
+        color: $color-ivory !important;
+
+        .flatpickr-monthDropdown-months {
+            background: $color-deep-teal !important;
+            color: $color-ivory !important;
+        }
+
+        .numInputWrapper input { color: $color-ivory !important; }
+    }
+
+    // Weekday row
+    .flatpickr-weekdays { background: transparent; }
+    span.flatpickr-weekday {
+        background: transparent;
+        color: rgba($color-gold, 0.70) !important;
+        font-weight: 600;
+    }
+
+    // Arrow triangle (top/bottom pointer toward input)
+    &.arrowTop::before  { border-bottom-color: $color-card-border !important; }
+    &.arrowTop::after   { border-bottom-color: $color-deep-teal !important; }
+    &.arrowBottom::before { border-top-color: $color-card-border !important; }
+    &.arrowBottom::after  { border-top-color: $color-deep-teal !important; }
+
+    // Day cells
+    .flatpickr-day {
+        color: rgba($color-ivory, 0.80) !important;
+        border-radius: $radius-md !important;
+
+        &:hover { background: rgba($color-gold, 0.10) !important; border-color: transparent !important; }
+
+        &.today {
+            border-color: rgba($color-gold, 0.50) !important;
+            color: $color-gold !important;
+        }
+
+        &.selected,
+        &.selected:hover {
+            background: $color-gold !important;
+            border-color: $color-gold !important;
+            color: $color-darkest !important;
+            font-weight: 700;
+        }
+
+        &.flatpickr-disabled,
+        &.prevMonthDay,
+        &.nextMonthDay {
+            color: rgba($color-ivory, 0.22) !important;
+        }
+    }
+}
+
+// Input wrapper — hide native calendar icon, keep our styling
+.date-picker-wrapper {
+    position: relative;
+
+    .date-picker { padding-right: 2.75rem !important; cursor: pointer; }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0.875rem;
+        display: flex;
+        align-items: center;
+        color: rgba($color-gold, 0.60);
+        pointer-events: none;
+    }
+}

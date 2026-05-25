@@ -3,8 +3,7 @@
 
         {{-- Brand --}}
         <a class="navbar-brand site-navbar__brand" href="{{ route('home', ['locale' => app()->getLocale()]) }}">
-            <img src="{{ asset('images/logo.svg') }}" alt="{{ __('site.footer.company') }}" class="site-navbar__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-            <span class="site-navbar__logo-text" style="display:none">{{ __('site.footer.company') }}</span>
+            <img src="{{ Vite::asset('resources/assets/logo.png') }}" alt="{{ __('site.footer.company') }}" class="site-navbar__logo">
         </a>
 
         {{-- Mobile toggle --}}

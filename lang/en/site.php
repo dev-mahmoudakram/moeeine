@@ -58,6 +58,7 @@ return [
     'services' => [
         'eyebrow'  => 'Our Services',
         'headline' => 'Everything You Need for Your Journey',
+        'body'     => 'Tailored mobility solutions for every visitor of the Holy Mosques — from independent cart rental to full accessibility support.',
         'cta'      => 'Learn More',
         'items'    => [
             [

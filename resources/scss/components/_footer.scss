@@ -62,7 +62,7 @@
     }
 
     &__logo {
-        height: 48px;
+        height: 60px;
         width: auto;
     }
 
@@ -112,6 +112,10 @@
         }
     }
 
+    &__list-unstyled {
+        padding-inline-start: 0 !important;
+    }
+
     &__links {
         display: flex;
         flex-direction: column;
@@ -143,7 +147,9 @@
     }
 
     // ─── Contact column ───────────────────────────────────────────────────────
-    // &__contact {}
+    &__contact {
+        padding-inline-start: 0 !important;
+    }
 
     &__contact-item {
         display: flex;

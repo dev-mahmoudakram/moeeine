@@ -4,6 +4,7 @@
 // ─── 0b. Third-party plugin CSS ────────────────────────────────────────────
 @import 'intl-tel-input/dist/css/intlTelInput.css';
 @import 'nice-select2/dist/css/nice-select2.css';
+@import 'flatpickr/dist/flatpickr.css';
 
 // ─── 1. Abstracts FIRST (variables + mixins — no CSS output) ───────────────
 @import 'abstracts/variables';
@@ -28,3 +29,4 @@
 
 // ─── 5. Pages ───────────────────────────────────────────────────────────────
 @import 'pages/home';
+@import 'pages/subpages';
