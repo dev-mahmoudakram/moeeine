@@ -1,0 +1,75 @@
+// ─── Colour Palette ────────────────────────────────────────────────────────
+$color-emerald:    #003C35;
+$color-deep-teal:  #062F2B;
+$color-dark:       #021F1C;
+$color-darkest:    #010F0D;
+
+$color-gold:       #D9B879;
+$color-gold-light: #E7C98A;
+$color-gold-muted: #B8975A;
+
+$color-ivory:      #F8F2E6;
+$color-ivory-muted:#EDE5D0;
+
+$color-mint:       #5CC7B2;
+$color-mint-muted: #3DA891;
+
+$color-card-bg:    rgba(255, 255, 255, 0.05);
+$color-card-border:rgba(217, 184, 121, 0.20);
+$color-card-hover: rgba(255, 255, 255, 0.09);
+
+$color-overlay:    rgba(2, 15, 13, 0.72);
+$color-glow-gold:  rgba(217, 184, 121, 0.18);
+$color-glow-mint:  rgba(92, 199, 178, 0.12);
+
+// ─── Typography ────────────────────────────────────────────────────────────
+$font-arabic:  'IBM Plex Sans Arabic', 'Tajawal', 'Cairo', 'Segoe UI', sans-serif;
+$font-latin:   'Inter', 'Montserrat', 'Segoe UI', sans-serif;
+
+$font-size-base:   1rem;
+$font-size-sm:     0.875rem;
+$font-size-lg:     1.125rem;
+$font-size-xl:     1.375rem;
+$font-size-2xl:    1.75rem;
+$font-size-3xl:    2.25rem;
+$font-size-4xl:    3rem;
+$font-size-hero:   clamp(2.25rem, 5vw, 4rem);
+
+$line-height-base: 1.75;
+$line-height-tight:1.3;
+
+// ─── Spacing ───────────────────────────────────────────────────────────────
+$section-py:    clamp(4rem, 8vw, 7rem);
+$section-px:    1.5rem;
+
+// ─── Borders & Radius ──────────────────────────────────────────────────────
+$radius-sm:   0.5rem;
+$radius-md:   1rem;
+$radius-lg:   1.5rem;
+$radius-xl:   2rem;
+$radius-pill: 999px;
+
+// ─── Shadows ───────────────────────────────────────────────────────────────
+$shadow-card:     0 4px 32px rgba(0, 0, 0, 0.35);
+$shadow-card-hover: 0 8px 48px rgba(0, 0, 0, 0.50);
+$shadow-glow-gold:  0 0 40px $color-glow-gold;
+$shadow-glow-mint:  0 0 40px $color-glow-mint;
+
+// ─── Transitions ───────────────────────────────────────────────────────────
+$transition-fast:   150ms ease;
+$transition-base:   300ms ease;
+$transition-slow:   600ms ease;
+$transition-reveal: 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+// ─── Z-index ───────────────────────────────────────────────────────────────
+$z-navbar:  100;
+$z-overlay: 50;
+$z-content: 10;
+
+// ─── Bootstrap overrides (set BEFORE importing Bootstrap) ──────────────────
+$primary:         $color-gold;
+$body-bg:         $color-dark;
+$body-color:      $color-ivory;
+$border-radius:   $radius-md;
+$font-family-base:$font-arabic;
+$enable-negative-margins: true;

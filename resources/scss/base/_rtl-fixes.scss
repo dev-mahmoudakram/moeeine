@@ -1,0 +1,54 @@
+// ─── Bootstrap logical-property gaps (Bootstrap 5 uses physical props) ──────
+[dir='rtl'] {
+    // Text alignment
+    .text-start  { text-align: right !important; }
+    .text-end    { text-align: left  !important; }
+
+    // Margins
+    .me-auto { margin-right: 0 !important; margin-left: auto !important; }
+    .ms-auto { margin-left:  0 !important; margin-right: auto !important; }
+
+    // Navbar
+    .navbar-nav { padding-right: 0; }
+
+    // Cart feature bullets: push ::before dot after text in RTL (appears on right)
+    .cart-section__feature-item::before { order: 1; }
+
+    // Service card CTA arrow
+    .service-card__arrow { display: inline-block; transform: rotate(180deg); }
+
+    // Stats numbers: keep LTR so +100, GPS, 24/7 display correctly
+    .stat-card__value { direction: ltr; }
+
+    // hreflang numbers/values that should stay LTR
+    [dir='ltr'] { direction: ltr; }
+
+    // Form inputs — keep LTR for phone/date
+    input[type='tel'],
+    input[type='date'],
+    input[type='email'],
+    input[type='url'],
+    input[type='number'] { direction: ltr; text-align: left; }
+
+    // Breadcrumb separator
+    .breadcrumb-item + .breadcrumb-item::before {
+        float: right;
+        padding-left: 0.5rem;
+        padding-right: 0;
+    }
+
+    // intl-tel-input flag on right side in RTL
+    .iti { direction: ltr; }
+}
+
+[dir='ltr'] {
+    // Service card CTA arrow points right
+    .service-card__arrow { display: inline-block; }
+}
+
+// ─── Section heading alignment in RTL ──────────────────────────────────────
+[dir='rtl'] .section-heading.text-start {
+    text-align: right !important;
+
+    .section-heading__body { margin-inline: 0; }
+}

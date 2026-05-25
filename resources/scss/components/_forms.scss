@@ -1,0 +1,285 @@
+// ─── Base form ─────────────────────────────────────────────────────────────
+.site-form {
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+    }
+
+    .form-label {
+        font-size: $font-size-sm;
+        font-weight: 600;
+        color: $color-gold;
+        letter-spacing: 0.02em;
+        margin-bottom: 0;
+    }
+
+    .form-control,
+    .form-select {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba($color-card-border, 0.8);
+        border-radius: $radius-md;
+        color: $color-ivory;
+        padding: 0.875rem 1.125rem;
+        font-size: $font-size-base;
+        line-height: 1.5;
+        min-height: 52px;
+        transition: border-color $transition-base, box-shadow $transition-base, background $transition-base;
+
+        &::placeholder { color: rgba($color-ivory, 0.30); }
+
+        &:focus {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba($color-gold, 0.65);
+            box-shadow: 0 0 0 3px rgba($color-gold, 0.10), inset 0 1px 2px rgba(0,0,0,0.2);
+            color: $color-ivory;
+            outline: none;
+        }
+
+        &.is-invalid {
+            border-color: #e57373;
+            box-shadow: 0 0 0 3px rgba(#e57373, 0.12);
+        }
+
+        option {
+            background: $color-deep-teal;
+            color: $color-ivory;
+        }
+    }
+
+    textarea.form-control {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .invalid-feedback {
+        display: block;
+        color: #e57373;
+        font-size: $font-size-sm;
+        margin-top: 0.25rem;
+    }
+}
+
+// ─── Contact form card ─────────────────────────────────────────────────────
+.contact-section__card {
+    @include glass-card;
+    padding: 2.75rem;
+
+    @media (max-width: 576px) { padding: 1.75rem 1.25rem; }
+}
+
+// ─── Flash messages ────────────────────────────────────────────────────────
+.form-flash {
+    padding: 1rem 1.375rem;
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+
+    &--success {
+        background: rgba($color-mint, 0.10);
+        border: 1px solid rgba($color-mint, 0.30);
+        color: $color-mint;
+    }
+
+    &--error {
+        background: rgba(#e57373, 0.08);
+        border: 1px solid rgba(#e57373, 0.25);
+        color: #e57373;
+    }
+}
+
+// ─── Form actions row ─────────────────────────────────────────────────────
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba($color-card-border, 0.5);
+
+    .btn {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}
+
+// ─── intl-tel-input overrides ─────────────────────────────────────────────
+.iti {
+    width: 100%;
+    direction: ltr;
+
+    &__selected-flag {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border-inline-end: 1px solid rgba($color-card-border, 0.8) !important;
+        padding: 0 10px !important;
+        border-radius: $radius-md 0 0 $radius-md !important;
+    }
+
+    &__country-list {
+        background: $color-deep-teal !important;
+        border: 1px solid $color-card-border !important;
+        box-shadow: $shadow-card !important;
+        color: $color-ivory !important;
+        max-height: 260px;
+        // thin gold scrollbar, hidden track
+        scrollbar-width: thin;
+        scrollbar-color: rgba($color-gold, 0.35) transparent;
+        &::-webkit-scrollbar       { width: 3px; }
+        &::-webkit-scrollbar-track { background: transparent; }
+        &::-webkit-scrollbar-thumb { background: rgba($color-gold, 0.35); border-radius: 2px; }
+    }
+
+    &__country {
+        &:hover, &--highlight {
+            background: rgba($color-gold, 0.10) !important;
+        }
+    }
+
+    &__dropdown-content {
+        background: $color-deep-teal !important;
+        border-radius: $radius-md !important;
+        overflow: hidden;
+    }
+
+    &__search-input {
+        background: $color-deep-teal !important;
+        background-color: $color-deep-teal !important;
+        border: none !important;
+        border-bottom: 1px solid rgba($color-card-border, 0.6) !important;
+        color: $color-ivory !important;
+        padding: 0.625rem 0.875rem !important;
+        font-size: $font-size-sm !important;
+        width: 100% !important;
+        outline: none !important;
+        border-radius: 0 !important;
+
+        &::placeholder { color: rgba($color-ivory, 0.40) !important; }
+        &:focus { background: $color-deep-teal !important; }
+    }
+
+    &__search-icon {
+        [dir='rtl'] & {
+            right: auto !important;
+            left: var(--iti-spacer-horizontal) !important;
+        }
+    }
+
+    &__dial-code { color: rgba($color-ivory, 0.60) !important; }
+
+    input.form-control {
+        padding-left: 6rem !important;
+        border-radius: $radius-md !important;
+    }
+
+    [dir='rtl'] & .iti__selected-flag {
+        border-radius: 0 $radius-md $radius-md 0 !important;
+        border-inline-end: none !important;
+        border-inline-start: 1px solid rgba($color-card-border, 0.8) !important;
+    }
+}
+
+// ─── nice-select2 overrides ───────────────────────────────────────────────
+.nice-select {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba($color-card-border, 0.8) !important;
+    border-radius: $radius-md !important;
+    color: $color-ivory !important;
+    height: 52px !important;
+    line-height: 52px !important;
+    padding-inline-start: 1.125rem !important;
+    padding-inline-end: 2.75rem !important;  // space for chevron
+    font-size: $font-size-base !important;
+    width: 100% !important;
+    text-align: start !important;
+    transition: border-color $transition-base, box-shadow $transition-base !important;
+
+    // Chevron — always on the inline-end side
+    &::after {
+        border-color: $color-gold !important;
+        margin-top: -5px !important;
+        // Default (LTR): right side — kept from nice-select2 CSS (right: 12px)
+    }
+
+    &.open,
+    &:focus {
+        border-color: rgba($color-gold, 0.65) !important;
+        box-shadow: 0 0 0 3px rgba($color-gold, 0.10) !important;
+        outline: none !important;
+    }
+
+    &.is-invalid {
+        border-color: #e57373 !important;
+    }
+
+    // Dropdown container
+    .nice-select-dropdown {
+        width: 100% !important;
+        left: 0 !important;
+        background: $color-deep-teal !important;
+        border: 1px solid $color-card-border !important;
+        border-radius: $radius-md !important;
+        box-shadow: $shadow-card !important;
+        margin-top: 4px !important;
+        z-index: 999 !important;
+        scrollbar-width: thin;
+        scrollbar-color: rgba($color-gold, 0.35) transparent;
+        &::-webkit-scrollbar       { width: 3px; }
+        &::-webkit-scrollbar-track { background: transparent; }
+        &::-webkit-scrollbar-thumb { background: rgba($color-gold, 0.35); border-radius: 2px; }
+    }
+
+    .list {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin-top: 0 !important;
+    }
+
+    .option {
+        color: rgba($color-ivory, 0.80) !important;
+        padding: 0.625rem 1.125rem !important;
+        line-height: 1.5 !important;
+        min-height: unset !important;
+        font-size: $font-size-sm !important;
+        text-align: start !important;
+
+        &:hover,
+        &.focus,
+        &.selected.focus {
+            background: rgba($color-gold, 0.10) !important;
+            color: $color-gold !important;
+        }
+
+        &.selected { color: $color-gold !important; font-weight: 600 !important; }
+        &.disabled { color: rgba($color-ivory, 0.35) !important; }
+    }
+
+    &.placeholder-selected .current { color: rgba($color-ivory, 0.35) !important; }
+}
+
+// RTL-specific nice-select2 overrides
+[dir='rtl'] .nice-select {
+    text-align: right !important;
+
+    // Chevron moves to left side in RTL
+    &::after {
+        right: auto !important;
+        left: 1.125rem !important;
+    }
+
+    // Dropdown aligns to right edge of trigger
+    .nice-select-dropdown {
+        left: auto !important;
+        right: 0 !important;
+    }
+
+    // Options right-aligned
+    .option {
+        text-align: right !important;
+    }
+}

@@ -1,0 +1,30 @@
+// ─── 0. Fonts — font-display:block prevents FOUT (no fallback swap flash) ──
+@import 'base/fonts';
+
+// ─── 0b. Third-party plugin CSS ────────────────────────────────────────────
+@import 'intl-tel-input/dist/css/intlTelInput.css';
+@import 'nice-select2/dist/css/nice-select2.css';
+
+// ─── 1. Abstracts FIRST (variables + mixins — no CSS output) ───────────────
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// ─── 2. Bootstrap (picks up our $variable overrides above) ─────────────────
+@import 'bootstrap/scss/bootstrap';
+
+// ─── 3. Base ────────────────────────────────────────────────────────────────
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/rtl-fixes';
+
+// ─── 4. Components ──────────────────────────────────────────────────────────
+@import 'components/animations';
+@import 'components/arches';
+@import 'components/navbar';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/footer';
+
+// ─── 5. Pages ───────────────────────────────────────────────────────────────
+@import 'pages/home';

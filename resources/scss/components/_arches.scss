@@ -1,0 +1,84 @@
+// ─── Decorative arch motifs used as section accents ────────────────────────
+
+.arch-decor {
+    position: absolute;
+    pointer-events: none;
+    overflow: hidden;
+
+    &__shape {
+        @include arch-pseudo(180px, rgba($color-gold, 0.07));
+        position: relative;
+
+        &--lg {
+            @include arch-pseudo(260px, rgba($color-gold, 0.05));
+            position: relative;
+        }
+
+        &--mint {
+            @include arch-pseudo(180px, rgba($color-mint, 0.06));
+            position: relative;
+        }
+    }
+
+    &--top-start {
+        top: -60px;
+        inset-inline-start: -40px;
+    }
+
+    &--top-end {
+        top: -60px;
+        inset-inline-end: -40px;
+    }
+
+    &--bottom-center {
+        bottom: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+// ─── Section divider arch (footer top) ────────────────────────────────────
+.site-footer__arch {
+    width: 100%;
+    height: 60px;
+    background: $color-dark;
+    clip-path: ellipse(55% 100% at 50% 0%);
+    margin-bottom: -1px;
+}
+
+// ─── Geometric dot-grid background ────────────────────────────────────────
+.geo-bg {
+    @include geo-bg;
+}
+
+// ─── Hero arch overlay (large faint arch behind hero content) ─────────────
+.hero-arch-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(700px, 90vw);
+        height: min(900px, 120vw);
+        border-radius: 50% 50% 0 0;
+        border: 1px solid rgba($color-gold, 0.09);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(500px, 70vw);
+        height: min(650px, 90vw);
+        border-radius: 50% 50% 0 0;
+        border: 1px solid rgba($color-gold, 0.06);
+    }
+}

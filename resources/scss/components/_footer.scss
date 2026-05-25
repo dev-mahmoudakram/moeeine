@@ -1,0 +1,223 @@
+.site-footer {
+    background: $color-darkest;
+    padding-bottom: 0;
+    position: relative;
+    @include geo-bg;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba($color-darkest, 0.85) 0%, $color-darkest 40%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    > .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    // ─── Top divider ─────────────────────────────────────────────────────────
+    &__divider {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2rem;
+        margin-bottom: 3.5rem;
+
+        &::before,
+        &::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to var(--dir-end, right), transparent, $color-card-border 40%, transparent);
+        }
+
+        [dir='rtl'] &::before { background: linear-gradient(to left,  transparent, $color-card-border 40%, transparent); }
+        [dir='rtl'] &::after  { background: linear-gradient(to right, transparent, $color-card-border 40%, transparent); }
+    }
+
+    &__divider-gem {
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: $color-gold;
+        transform: rotate(45deg);
+        margin: 0 1.25rem;
+        flex-shrink: 0;
+        box-shadow: 0 0 16px rgba($color-gold, 0.5);
+    }
+
+    // ─── Brand panel ─────────────────────────────────────────────────────────
+    &__brand {
+        padding: 1rem 0 3rem;
+    }
+
+    &__brand-link {
+        display: inline-block;
+        &:hover { opacity: 0.8; }
+    }
+
+    &__logo {
+        height: 48px;
+        width: auto;
+    }
+
+    &__brand-name {
+        font-size: 1.75rem;
+        font-weight: 700;
+        @include gradient-text;
+        display: block;
+        margin-bottom: 0.75rem;
+    }
+
+    &__tagline {
+        font-size: $font-size-base;
+        color: rgba($color-ivory, 0.55);
+        max-width: 340px;
+        margin-inline: auto;
+        line-height: 1.7;
+    }
+
+    // ─── Inner rule ──────────────────────────────────────────────────────────
+    &__inner-rule {
+        height: 1px;
+        background: linear-gradient(to right, transparent, $color-card-border 30%, $color-card-border 70%, transparent);
+        margin-bottom: 3rem;
+    }
+
+    // ─── Columns ─────────────────────────────────────────────────────────────
+    &__col-title {
+        font-size: $font-size-sm;
+        font-weight: 700;
+        color: $color-gold;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1.375rem;
+        position: relative;
+        padding-bottom: 0.625rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            inset-inline-start: 0;
+            width: 28px;
+            height: 2px;
+            background: $color-gold;
+            border-radius: 2px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        padding-inline-start: 0rem !important;
+    }
+
+    &__link {
+        font-size: $font-size-sm;
+        color: rgba($color-ivory, 0.60);
+        transition: color $transition-base, padding-inline-start $transition-base;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+
+        &:hover {
+            color: $color-gold;
+            padding-inline-start: 4px;
+        }
+
+        &--phone {
+            [dir='rtl'] & {
+                direction: ltr;
+                flex-direction: row;
+                text-align: start;
+                justify-content: end;
+            }
+        }
+    }
+
+    // ─── Contact column ───────────────────────────────────────────────────────
+    // &__contact {}
+
+    &__contact-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-bottom: 0.875rem;
+    }
+
+    &__contact-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: rgba($color-ivory, 0.38);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    // ─── Cities column ───────────────────────────────────────────────────────
+    &__cities {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        padding-inline-start: 0rem !important;
+    }
+
+    &__city {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: $font-size-sm;
+        color: rgba($color-ivory, 0.60);
+    }
+
+    &__city-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $color-gold;
+        flex-shrink: 0;
+        box-shadow: 0 0 6px rgba($color-gold, 0.5);
+
+        [dir='rtl'] & { order: 0; } // In RTL: dot appears after city name (on the right)
+    }
+
+    &__lang-switch {
+        margin-top: 0.5rem;
+    }
+
+    // ─── Bottom bar ───────────────────────────────────────────────────────────
+    &__bottom {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.25rem 0;
+        margin-top: 3rem;
+        border-top: 1px solid rgba($color-card-border, 0.4);
+    }
+
+    &__copy {
+        font-size: $font-size-sm;
+        color: rgba($color-ivory, 0.38);
+    }
+
+    &__legal {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    &__legal-link {
+        font-size: $font-size-sm;
+        color: rgba($color-ivory, 0.38);
+        transition: color $transition-base;
+
+        &:hover { color: $color-gold; }
+    }
+}

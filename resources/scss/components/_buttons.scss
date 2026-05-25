@@ -1,0 +1,80 @@
+// ─── Gold (Primary) ────────────────────────────────────────────────────────
+.btn-gold {
+    background: $color-gold;
+    color: $color-darkest;
+    border: 1px solid $color-gold;
+    font-weight: 600;
+    border-radius: $radius-pill;
+    padding: 0.7rem 1.75rem;
+    transition: background $transition-base, box-shadow $transition-base, transform $transition-fast;
+    letter-spacing: 0.02em;
+
+    &:hover, &:focus-visible {
+        background: $color-gold-light;
+        border-color: $color-gold-light;
+        color: $color-darkest;
+        box-shadow: 0 4px 24px rgba($color-gold, 0.35);
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    &.btn-lg {
+        padding: 0.875rem 2.25rem;
+        font-size: $font-size-lg;
+    }
+
+    &.btn-sm {
+        padding: 0.45rem 1.25rem;
+        font-size: $font-size-sm;
+    }
+}
+
+// ─── Gold Outline (Secondary) ──────────────────────────────────────────────
+.btn-outline-gold {
+    background: transparent;
+    color: $color-gold;
+    border: 1px solid $color-gold;
+    font-weight: 600;
+    border-radius: $radius-pill;
+    padding: 0.7rem 1.75rem;
+    transition: background $transition-base, color $transition-base, box-shadow $transition-base, transform $transition-fast;
+    letter-spacing: 0.02em;
+
+    &:hover, &:focus-visible {
+        background: rgba($color-gold, 0.12);
+        color: $color-gold-light;
+        border-color: $color-gold-light;
+        box-shadow: 0 4px 20px rgba($color-gold, 0.2);
+        transform: translateY(-1px);
+    }
+
+    &.btn-lg {
+        padding: 0.875rem 2.25rem;
+        font-size: $font-size-lg;
+    }
+}
+
+// ─── WhatsApp CTA ──────────────────────────────────────────────────────────
+.btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    border-radius: $radius-pill;
+    padding: 0.7rem 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background $transition-base, transform $transition-fast;
+    width: max-content;
+
+    &:hover {
+        background: darken(#25D366, 8%);
+        color: #fff;
+        transform: translateY(-1px);
+    }
+}

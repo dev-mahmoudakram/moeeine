@@ -1,0 +1,64 @@
+// ─── Glass Card ────────────────────────────────────────────────────────────
+@mixin glass-card($bg: $color-card-bg, $border: $color-card-border) {
+    background: $bg;
+    border: 1px solid $border;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: $radius-lg;
+    box-shadow: $shadow-card;
+}
+
+// ─── Gold Glow ─────────────────────────────────────────────────────────────
+@mixin gold-glow($intensity: 1) {
+    box-shadow: 0 0 #{40px * $intensity} rgba(217, 184, 121, #{0.18 * $intensity});
+}
+
+// ─── Gradient Text ─────────────────────────────────────────────────────────
+@mixin gradient-text($from: $color-gold, $to: $color-gold-light) {
+    background: linear-gradient(135deg, $from, $to);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+// ─── Section Base ──────────────────────────────────────────────────────────
+@mixin section-base($bg: $color-dark) {
+    padding: $section-py 0;
+    background: $bg;
+    position: relative;
+    overflow: hidden;
+}
+
+// ─── Arch Motif ────────────────────────────────────────────────────────────
+@mixin arch-pseudo($size: 200px, $color: rgba(217, 184, 121, 0.06)) {
+    content: '';
+    position: absolute;
+    width: $size;
+    height: $size * 1.5;
+    border-radius: calc(#{$size} / 2) calc(#{$size} / 2) 0 0;
+    border: 1px solid $color;
+    pointer-events: none;
+}
+
+// ─── Geometric Pattern ─────────────────────────────────────────────────────
+@mixin geo-bg() {
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(217, 184, 121, 0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+}
+
+// ─── RTL-aware margin ──────────────────────────────────────────────────────
+@mixin margin-start($val) {
+    [dir='ltr'] & { margin-left: $val; }
+    [dir='rtl'] & { margin-right: $val; }
+}
+
+@mixin margin-end($val) {
+    [dir='ltr'] & { margin-right: $val; }
+    [dir='rtl'] & { margin-left: $val; }
+}
+
+// ─── Fluid font ────────────────────────────────────────────────────────────
+@mixin fluid-type($min, $max, $min-vw: 375px, $max-vw: 1440px) {
+    font-size: clamp(#{$min}, #{$min} + (#{$max} - #{$min}) * ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw})), #{$max});
+}
