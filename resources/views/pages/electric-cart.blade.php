@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('title', __('site.nav.electric_cart') . ' | ' . __('site.footer.company'))
+@section('title',          __('site.meta.pages.cart.title'))
+@section('description',    __('site.meta.pages.cart.description'))
+@section('og_title',       __('site.meta.pages.cart.og_title'))
+@section('og_description', __('site.meta.pages.cart.og_description'))
 
 @section('content')
 

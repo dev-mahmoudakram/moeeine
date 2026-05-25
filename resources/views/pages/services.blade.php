@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('title', __('site.nav.services') . ' | ' . __('site.footer.company'))
+@section('title',          __('site.meta.pages.services.title'))
+@section('description',    __('site.meta.pages.services.description'))
+@section('og_title',       __('site.meta.pages.services.og_title'))
+@section('og_description', __('site.meta.pages.services.og_description'))
 
 @section('content')
 

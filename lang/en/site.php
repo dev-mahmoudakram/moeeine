@@ -7,6 +7,39 @@ return [
         'description'    => 'Premium, safe mobility service for visitors of the Two Holy Mosques. Electric carts, trained companions, and smart online booking.',
         'og_title'       => 'Moein — A More Accessible Journey for Guests of Allah',
         'og_description' => 'We provide a complete mobility experience around the Holy Mosques with care worthy of the place and its guests.',
+
+        'pages' => [
+            'services' => [
+                'title'          => 'Services | Moein',
+                'description'    => 'Explore Moein services: Haram transport, elderly companion assistance, special needs mobility, and comfortable electric carts.',
+                'og_title'       => 'Moein Mobility Services at the Holy Mosques',
+                'og_description' => 'A complete suite of premium mobility services for guests of the Two Holy Mosques in Makkah and Madinah.',
+            ],
+            'about' => [
+                'title'          => 'About | Moein',
+                'description'    => 'Learn about Moein: our vision to ease the journey of pilgrims and Umrah visitors through smart mobility and dignified service.',
+                'og_title'       => 'About Moein — The Story Behind the Vision',
+                'og_description' => 'Moein was born from a clear vision: that every guest of Allah finds their way with ease and dignity within the Holy Mosques.',
+            ],
+            'cart' => [
+                'title'          => 'Electric Cart | Moein',
+                'description'    => 'Silent and safe electric carts designed for transporting guests of the Holy Mosques within the Haram and surrounding areas.',
+                'og_title'       => 'Moein Electric Cart — Smart Mobility in the Haram',
+                'og_description' => 'Our electric carts are purpose-built for the Haram environment: silent, safe, and accommodating for all guests.',
+            ],
+            'operations' => [
+                'title'          => 'Operations | Moein',
+                'description'    => 'Discover Moein\'s operations: 24/7 readiness, trained companions, and coverage across key areas of the Holy Mosques.',
+                'og_title'       => 'Moein Operations — Service That Never Stops',
+                'og_description' => 'We operate our fleet around the clock throughout Hajj and Umrah seasons with certified companions and professional service protocols.',
+            ],
+            'contact' => [
+                'title'          => 'Contact Us | Moein',
+                'description'    => 'Contact the Moein team to book a service or inquire about hotel partnerships and group mobility solutions.',
+                'og_title'       => 'Contact Moein — Book or Inquire',
+                'og_description' => 'We\'re here to answer your questions and facilitate mobility service bookings for guests of the Holy Mosques.',
+            ],
+        ],
     ],
 
     'nav' => [
